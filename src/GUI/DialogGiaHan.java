@@ -7,7 +7,7 @@ package GUI;
 import javax.swing.JOptionPane;
 
 import model.SinhVienKTX;
-import utils.Date;
+import utils.Check;
 
 /**
  *
@@ -233,7 +233,7 @@ public class DialogGiaHan extends javax.swing.JDialog {
         String ngayHiaHanMoi = ngayHetHanTextField.getText();
         if (ngayHiaHanMoi.equals(this.sv.getNgayHetHan())) {
             JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập giá trị mới cho \"Ngày hết hạn\"");
-        } else if(!Date.checkDateFormat(ngayHiaHanMoi)) {
+        } else if(!Check.checkDateFormat(ngayHiaHanMoi)) {
             JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập giá trị mới \"Ngày hết hạn\" đúng định dạng: dd/MM/yyyy!");
         } else {
             int respone = JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn sửa không?", "Xác nhận sửa", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);

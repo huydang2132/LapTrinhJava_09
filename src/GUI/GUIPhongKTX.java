@@ -35,16 +35,21 @@ public class GUIPhongKTX extends javax.swing.JFrame {
             "Mã sinh viên", "Họ và tên", "Giới tính", "Ngày sinh", "Số điện thoại", "Quê quán", "Ngày đăng ký", "Ngày hết hạn"
         });
 
-        reloadTable();
+        reload();
     }
 
-    private void reloadTable() {
+    private void reload() {
         model.setRowCount(0);
         for (SinhVienKTX sv : this.phongKTX.getDsSV()) {
             model.addRow(new Object[] {
                 sv.getMsv(), sv.getHoTen(), sv.getGioiTinh(), sv.getNgaySinh(), sv.getSdt(), sv.getQueQuan(), sv.getNgayDangKy(), sv.getNgayHetHan()
             });
         }
+
+        jLabel4.setText("Loại Phòng: " + phongKTX.getLoaiPhong());
+        jLabel6.setText("Số sinh viên hiện tại: " + phongKTX.getSoSVHienTai());
+        jLabel5.setText("Số sinh viên tối đa: " + phongKTX.getSoSVToiDa());
+        jLabel7.setText("Tình trạng: " + phongKTX.getTinhTrang());
     }
 
     // hàm xử lý nhấn nút button xóa sinh viên
@@ -58,11 +63,11 @@ public class GUIPhongKTX extends javax.swing.JFrame {
         } else {
             int response = JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn xóa không?", "Xác nhận xóa", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
-            for (int i = viTriXoa.length - 1; i >= 0; i--) {
-                if (response == JOptionPane.YES_OPTION) {
+            if (response == JOptionPane.YES_OPTION) {
+                for (int i = viTriXoa.length - 1; i >= 0; i--) {
                     // Thực hiện xóa
                     this.phongKTX.xoaSinhVien(viTriXoa[i]);
-                    this.reloadTable();
+                    this.reload();
                 }
             }
         }
@@ -80,8 +85,24 @@ public class GUIPhongKTX extends javax.swing.JFrame {
             SinhVienKTX svTagert = this.phongKTX.getDsSV().get(viTri[0]);
             DialogGiaHan dialogGiaHan = new DialogGiaHan(this, rootPaneCheckingEnabled, svTagert);
             dialogGiaHan.setVisible(true);
-            this.reloadTable();
+
+            this.reload();
         }
+    }
+
+    private void xoaPhongHandeler() {
+        int response = JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn xóa không?", "Xác nhận xóa", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if(response == JOptionPane.YES_OPTION) {
+
+        }
+    }
+
+    private void suaPhongHandeler() {
+        DialogSuaPhongKTX dialogSuaPhongKTX = new DialogSuaPhongKTX(this, rootPaneCheckingEnabled, this.phongKTX);
+        dialogSuaPhongKTX.setVisible(true);
+
+        this.reload();
     }
     
     // hàm xử lý sự kiện trước khi dispose
@@ -124,18 +145,22 @@ public class GUIPhongKTX extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         dsSVTable = new javax.swing.JTable();
         giaHanButotn = new javax.swing.JButton();
+        xoaPhongButton = new javax.swing.JButton();
+        suaPhongButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setTitle("Chi tiết phòng " + phongKTX.getTenPhong());
-        setSize(new java.awt.Dimension(1092, 459));
+        setTitle("Chi tiết phòng: " + phongKTX.getTenPhong());
+        setSize(new java.awt.Dimension(1092, 465));
         addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                int respone = JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn thoát?", "Xác nhận thoát ứng dụng", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                int respone = JOptionPane.showOptionDialog(rootPane, "Bạn có muốn lưu trước khi thoát?", "Xác nhận", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+                new Object[]{"Lưu và thoát", "Không lưu và thoát"}, null);
 
                 if(respone == JOptionPane.YES_OPTION) {
-                    super.windowClosing(e);
                     dispose();
+                    System.exit(0);
+                } else if(respone == JOptionPane.NO_OPTION) {
                     System.exit(0);
                 }
             }
@@ -305,6 +330,22 @@ public class GUIPhongKTX extends javax.swing.JFrame {
             }
         });
 
+        xoaPhongButton.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        xoaPhongButton.setText("Xóa phòng");
+        xoaPhongButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xoaPhongButtonActionPerformed(evt);
+            }
+        });
+
+        suaPhongButton.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        suaPhongButton.setText("Sửa thông tin phòng");
+        suaPhongButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suaPhongButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -333,7 +374,10 @@ public class GUIPhongKTX extends javax.swing.JFrame {
                                 .addGap(33, 33, 33)
                                 .addComponent(xoaSinhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(37, 37, 37)
-                        .addComponent(giaHanButotn, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(suaPhongButton, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                            .addComponent(giaHanButotn, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(xoaPhongButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 959, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
@@ -342,8 +386,10 @@ public class GUIPhongKTX extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(quayLaiButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(51, 51, 51)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12)
@@ -352,25 +398,28 @@ public class GUIPhongKTX extends javax.swing.JFrame {
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
+                                .addGap(14, 14, 14)
                                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(suaPhongButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(xoaPhongButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(themSinhVienButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(xoaSinhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(giaHanButotn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(quayLaiButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
+                            .addComponent(giaHanButotn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>
-
+    
     private void quayLaiButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:
         GUIQuanLyKyTucXa.main(null);
@@ -389,6 +438,16 @@ public class GUIPhongKTX extends javax.swing.JFrame {
     private void giaHanButotnActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
         this.giaHanHandler();
+    }  
+
+    private void suaPhongButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+        this.suaPhongHandeler();
+    }                                              
+
+    private void xoaPhongButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // TODO add your handling code here:
+        this.xoaPhongHandeler();
     }  
 
     /**
@@ -460,5 +519,7 @@ public class GUIPhongKTX extends javax.swing.JFrame {
     private javax.swing.JButton themSinhVienButton;
     private javax.swing.JButton xoaSinhVien;
     private javax.swing.JButton giaHanButotn;
+    private javax.swing.JButton xoaPhongButton;
+    private javax.swing.JButton suaPhongButton;
     // End of variables declaration                   
 }
