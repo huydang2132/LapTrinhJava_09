@@ -1,0 +1,4 @@
+2,3,KTPM,5/2/1234,nam
+SV01,Phong,Cntt,5/12/2002,nam
+a,a,a,5/12/2002,nam
+SV03,Huy,CNTT,14/4/1239,nam
