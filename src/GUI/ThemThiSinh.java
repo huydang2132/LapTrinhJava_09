@@ -208,6 +208,8 @@ public class ThemThiSinh extends javax.swing.JFrame {
                         lich.themSV(searchSV.getMasv());
                     }
                 }
+                txtMaSV.setText("");
+                searchSV = null;
             }
             showTableData();
             tsScreen.showTableDataTS();
@@ -232,7 +234,7 @@ public class ThemThiSinh extends javax.swing.JFrame {
     private void txtMaSVKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMaSVKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             this.searchSV = searchSVbYId(txtMaSV.getText());
-            if (txtMaSV.getText().trim() == "") {
+            if (txtMaSV.getText().trim().equals("")) {
                 JOptionPane.showMessageDialog(this, "Nhập mã sinh viên để tìm kiếm!", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
             } else {
                 if (searchSV == null) {

@@ -10,7 +10,6 @@ import static Service.LichThiService.SVFromFile;
 import static Service.LichThiService.getListSVById;
 import static Service.LichThiService.writeFile;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
