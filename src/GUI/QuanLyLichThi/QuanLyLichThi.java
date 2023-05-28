@@ -4,7 +4,6 @@
  */
 package GUI.QuanLyLichThi;
 
-import GUI.QuanLyLichThi.ThiSinh;
 import Model.LichThi;
 import GUI.Home;
 import static Service.LichThiService.lichThiFromFile;

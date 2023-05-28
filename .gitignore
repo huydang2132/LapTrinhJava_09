@@ -1,0 +1,13 @@
+nbproject/private/
+build.properties
+nb-configuration.xml
+
+build/
+dist/
+build.xml
+**/*.class
+**/*.jar
+
+**/*.log
+**/*.bak
+**/*.tmp
