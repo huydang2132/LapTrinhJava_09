@@ -13,13 +13,14 @@ SV4
 SV8
 SV11
 
-Kết thúc học phần,Thiết kế phần mềm,31/05/2023,8h,902,A1,6
+Kết thúc học phần,Thiết kế phần mềm,31/05/2023,8h,902,A1,7
 SV8
 SV6
 SV9
 SV1
 SV11
 SV3
+SV12
 
 Đánh giá thường xuyên,Lập trình Java,29/05/2023,12h30,805,A1,7
 SV1

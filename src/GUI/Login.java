@@ -4,7 +4,7 @@
  */
 package GUI;
 
-import CSDL.TAIKHOAN;
+import Model.TaiKhoan;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -22,6 +22,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -52,8 +53,8 @@ public class Login extends javax.swing.JFrame {
 
         txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        btnLogin.setBackground(new java.awt.Color(102, 255, 51));
-        btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnLogin.setBackground(new java.awt.Color(0, 158, 15));
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Đăng nhập");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -102,8 +103,8 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45)
-                .addComponent(btnLogin)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,7 +117,7 @@ public class Login extends javax.swing.JFrame {
             return;
         } else {
             try {
-                ArrayList<TAIKHOAN> listAcc = AccFromFile();
+                ArrayList<TaiKhoan> listAcc = AccFromFile();
                 if (checkTK(name, password, listAcc)) {
                     Home home = new Home();
                     home.setVisible(true);
@@ -133,17 +134,17 @@ public class Login extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    private ArrayList<TAIKHOAN> AccFromFile() throws FileNotFoundException {
-        ArrayList<TAIKHOAN> listAcc = new ArrayList<TAIKHOAN>();
+    private ArrayList<TaiKhoan> AccFromFile() throws FileNotFoundException {
+        ArrayList<TaiKhoan> listAcc = new ArrayList<TaiKhoan>();
         try {
             BufferedReader read = new BufferedReader(new FileReader("src/FileData/TAIKHOAN.txt"));
             String line;
-            TAIKHOAN tk = null;
+            TaiKhoan tk = null;
             while ((line = read.readLine()) != null) {
                 String[] taikhoan = line.split(",");
                 String tentk = taikhoan[0].trim();
                 String matkhau = taikhoan[1].trim();
-                tk = new TAIKHOAN(tentk, matkhau);
+                tk = new TaiKhoan(tentk, matkhau);
                 System.out.println(tentk);
                 listAcc.add(tk);
             }
@@ -152,10 +153,10 @@ public class Login extends javax.swing.JFrame {
         }
         return listAcc;
     }
-    private boolean checkTK(String tentk, String matkhau, ArrayList<TAIKHOAN> list){
+    private boolean checkTK(String tentk, String matkhau, ArrayList<TaiKhoan> list){
         String name = txtName.getText();
         String password = txtPassword.getText();
-        for(TAIKHOAN tk:list){
+        for(TaiKhoan tk:list){
             if(name.equals(tk.getTenTaiKhoan())&&password.equals(tk.getMatKhau())){
                 return true;
             }

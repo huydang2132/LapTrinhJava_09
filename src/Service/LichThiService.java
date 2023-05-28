@@ -4,8 +4,8 @@
  */
 package Service;
 
-import CSDL.LICHTHI;
-import CSDL.SINHVIEN;
+import Model.LichThi;
+import Model.SinhVien;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -31,13 +31,13 @@ public class LichThiService {
         }
     }
 
-    public static List<LICHTHI> lichThiFromFile(String fileName) throws Exception {
-        List<LICHTHI> list = new ArrayList<>();
+    public static List<LichThi> lichThiFromFile(String fileName) throws Exception {
+        List<LichThi> list = new ArrayList<>();
 
         try (BufferedReader read = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = read.readLine()) != null) {
-                LICHTHI lichthi = new LICHTHI();
+                LichThi lichthi = new LichThi();
                 String[] data = line.split(",");
                 lichthi.setTenKyThi(data[0]);
                 lichthi.setMonThi(data[1]);
@@ -61,12 +61,12 @@ public class LichThiService {
         return list;
     }
 
-    public static List<SINHVIEN> SVFromFile(String fileName) throws Exception {
-        List<SINHVIEN> listSV = new ArrayList<>();
+    public static List<SinhVien> SVFromFile(String fileName) throws Exception {
+        List<SinhVien> listSV = new ArrayList<>();
         try (BufferedReader read = new BufferedReader(new FileReader(fileName))) {
             String line;
             while ((line = read.readLine()) != null) {
-                SINHVIEN sv = new SINHVIEN();
+                SinhVien sv = new SinhVien();
                 String[] data = line.split(",");
                 sv.setMasv(data[0]);
                 sv.setHoten(data[1]);
@@ -81,8 +81,8 @@ public class LichThiService {
         return listSV;
     }
 
-    public static SINHVIEN getListSVById(List<SINHVIEN> list, String maSV) {
-        for (SINHVIEN sv : list) {
+    public static SinhVien getListSVById(List<SinhVien> list, String maSV) {
+        for (SinhVien sv : list) {
             if (sv.getMasv().equalsIgnoreCase(maSV)) {
                 return sv;
             }
