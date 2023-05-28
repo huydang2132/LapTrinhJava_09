@@ -1,0 +1,6 @@
+2,3,0,Yếu
+SV01,Phong,14,Yếu
+a,a,0,null
+SV03,Huy,97,Xuất sắc
+SV04,Huy,0,null
+SV05,Huy,14,Yếu

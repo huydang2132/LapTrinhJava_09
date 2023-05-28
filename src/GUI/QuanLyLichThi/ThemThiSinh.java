@@ -31,7 +31,7 @@ public class ThemThiSinh extends javax.swing.JFrame {
     LichThi lichthi;
     static DefaultTableModel tbSinhVien;
     static String fileName = "src/FileData/LICHTHI.txt";
-    static String fileSV = "src/FileData/THISINH.txt";
+    static String fileSV = "src/FileData/SinhVien.txt";
     private ThiSinh tsScreen;
     private SinhVien searchSV;
 
@@ -198,7 +198,7 @@ public class ThemThiSinh extends javax.swing.JFrame {
                     for (int row : selectedRows) {
                         for (LichThi lich : listLichThi) {
                             if (lich.equals(lichthi)) {
-                                lich.themSV(listSV.get(row).getMasv());
+                                lich.themSV(listSV.get(row).getMaSV());
                             }
                         }
                     }
@@ -206,7 +206,7 @@ public class ThemThiSinh extends javax.swing.JFrame {
             } else {
                 for (LichThi lich : listLichThi) {
                     if (lich.equals(lichthi)) {
-                        lich.themSV(searchSV.getMasv());
+                        lich.themSV(searchSV.getMaSV());
                     }
                 }
                 txtMaSV.setText("");
@@ -256,7 +256,7 @@ public class ThemThiSinh extends javax.swing.JFrame {
         }
         listShow.removeAll(listExists);
         for (SinhVien sv : listShow) {
-            tbSinhVien.addRow(new Object[]{sv.getMasv(), sv.getHoten(), sv.getNgaysinh(), sv.getGioitinh(), sv.getQuequan()});
+            tbSinhVien.addRow(new Object[]{sv.getMaSV(), sv.getTenSV(), sv.getKhoa(), sv.getNgaySinh(), sv.getGioiTinh()});
         }
     }
 
@@ -273,7 +273,7 @@ public class ThemThiSinh extends javax.swing.JFrame {
         SinhVien sv = new SinhVien();
         sv = searchSVbYId(MaSV);
         if (sv != null) {
-            tbSinhVien.addRow(new Object[]{sv.getMasv(), sv.getHoten(), sv.getNgaysinh(), sv.getGioitinh(), sv.getQuequan()});
+            tbSinhVien.addRow(new Object[]{sv.getMaSV(), sv.getTenSV(), sv.getKhoa(), sv.getNgaySinh(), sv.getGioiTinh()});
         }
     }
 

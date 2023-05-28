@@ -42,7 +42,7 @@ public class GUIPhongKTX extends javax.swing.JFrame {
         model.setRowCount(0);
         for (SinhVienKTX sv : this.phongKTX.getDsSV()) {
             model.addRow(new Object[] {
-                sv.getMasv(), sv.getHoten(), sv.getGioitinh(), sv.getNgaysinh(), sv.getQuequan(), sv.getNgayDangKy(), sv.getNgayHetHan()
+                sv.getMaSV(), sv.getTenSV(), sv.getKhoa(), sv.getNgaySinh(), sv.getGioiTinh(), sv.getNgayDangKy(), sv.getNgayHetHan()
             });
         }
 

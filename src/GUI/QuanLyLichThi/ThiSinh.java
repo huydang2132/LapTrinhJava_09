@@ -31,7 +31,7 @@ public class ThiSinh extends javax.swing.JFrame {
     LichThi lichthi;
     static DefaultTableModel tbThiSinh;
     static String fileName = "src/FileData/LICHTHI.txt";
-    static String fileSV = "src/FileData/THISINH.txt";
+    static String fileSV = "src/FileData/SinhVien.txt";
     private ThemThiSinh themThiSinh;
 
     public ThiSinh(List listMaSV, LichThi lichthiFromParent, List<LichThi> list) {
@@ -332,7 +332,7 @@ public class ThiSinh extends javax.swing.JFrame {
             listShow.add(getListSVById(listSV, listMSV.get(i)));
         }
         for (SinhVien sv : listShow) {
-            tbThiSinh.addRow(new Object[]{sv.getMasv(), sv.getHoten(), sv.getNgaysinh(), sv.getGioitinh(), sv.getQuequan()});
+            tbThiSinh.addRow(new Object[]{sv.getMaSV(), sv.getTenSV(), sv.getKhoa(), sv.getNgaySinh(), sv.getGioiTinh()});
         }
     }
 

@@ -4,71 +4,102 @@
  */
 package Model;
 
+import java.util.Objects;
+
 /**
  *
- * @author Đặng Huy
+ * @author DELL
  */
 public class SinhVien {
-    protected String masv;
-    protected String hoten;
-    protected String ngaysinh;
-    protected String gioitinh;
-    protected String quequan;
+    protected String MaSV,TenSV,Khoa;
+    protected String NgaySinh;
+    protected String GioiTinh;
 
     public SinhVien() {
     }
 
-    public SinhVien(String masv, String hoten, String ngaysinh, String gioitinh, String quequan) {
-        this.masv = masv;
-        this.hoten = hoten;
-        this.ngaysinh = ngaysinh;
-        this.gioitinh = gioitinh;
-        this.quequan = quequan;
+    public SinhVien(String MaSV) {
+        
     }
 
-    public String getMasv() {
-        return masv;
+    public SinhVien(String MaSV, String TenSV, String Khoa, String NgaySinh, String GioiTinh) {
+        this.MaSV = MaSV;
+        this.TenSV = TenSV;
+        this.Khoa = Khoa;
+        this.NgaySinh = NgaySinh;
+        this.GioiTinh = GioiTinh;
+    }
+    
+    public String getMaSV() {
+        return MaSV;
     }
 
-    public void setMasv(String masv) {
-        this.masv = masv;
+    public void setMaSV(String MaSV) {
+        this.MaSV = MaSV;
     }
 
-    public String getHoten() {
-        return hoten;
+    public String getTenSV() {
+        return TenSV;
     }
 
-    public void setHoten(String hoten) {
-        this.hoten = hoten;
+    public void setTenSV(String TenSV) {
+        this.TenSV = TenSV;
     }
 
-    public String getNgaysinh() {
-        return ngaysinh;
+    public String getKhoa() {
+        return Khoa;
     }
 
-    public void setNgaysinh(String ngaysinh) {
-        this.ngaysinh = ngaysinh;
+    public void setKhoa(String Khoa) {
+        this.Khoa = Khoa;
     }
 
-    public String getGioitinh() {
-        return gioitinh;
+    public String getNgaySinh() {
+        return NgaySinh;
     }
 
-    public void setGioitinh(String gioitinh) {
-        this.gioitinh = gioitinh;
+    public void setNgaySinh(String NgaySinh) {
+        this.NgaySinh = NgaySinh;
     }
 
-    public String getQuequan() {
-        return quequan;
+    public String getGioiTinh() {
+        return GioiTinh;
     }
 
-    public void setQuequan(String quequan) {
-        this.quequan = quequan;
+    public void setGioiTinh(String GioiTinh) {
+        this.GioiTinh = GioiTinh;
+    }
+
+    
+    @Override
+    public String toString() {
+        return  MaSV+","+ TenSV+ "," + Khoa +","+ NgaySinh +","+ GioiTinh;
+    }
+
+    public SinhVien(String MaSV, String TenSV) {
+        this.MaSV = MaSV;
+        this.TenSV = TenSV;
+    }
+    
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
     }
 
     @Override
-    public String toString() {
-        return String.format("%s,%s,%s,%s,%s", masv, hoten, ngaysinh, gioitinh, quequan);
-    }
-    
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final SinhVien other = (SinhVien) obj;
+        return Objects.equals(this.MaSV, other.MaSV);
+    }  
+
 }

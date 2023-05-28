@@ -61,7 +61,7 @@ public class DialogGiaHan extends javax.swing.JDialog {
 
         msvTextField.setEditable(false);
         msvTextField.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        msvTextField.setText(this.sv.getMasv());
+        msvTextField.setText(this.sv.getMaSV());
         msvTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 msvTextFieldActionPerformed(evt);
@@ -76,7 +76,7 @@ public class DialogGiaHan extends javax.swing.JDialog {
 
         hoTenTextField.setEditable(false);
         hoTenTextField.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        hoTenTextField.setText(this.sv.getHoten());
+        hoTenTextField.setText(this.sv.getTenSV());
         hoTenTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hoTenTextFieldActionPerformed(evt);
@@ -88,7 +88,7 @@ public class DialogGiaHan extends javax.swing.JDialog {
 
         ngaySinhTextField.setEditable(false);
         ngaySinhTextField.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        ngaySinhTextField.setText(this.sv.getNgaysinh());
+        ngaySinhTextField.setText(this.sv.getNgaySinh());
         ngaySinhTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ngaySinhTextFieldActionPerformed(evt);

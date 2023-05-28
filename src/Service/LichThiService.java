@@ -68,11 +68,11 @@ public class LichThiService {
             while ((line = read.readLine()) != null) {
                 SinhVien sv = new SinhVien();
                 String[] data = line.split(",");
-                sv.setMasv(data[0]);
-                sv.setHoten(data[1]);
-                sv.setNgaysinh(data[2]);
-                sv.setGioitinh(data[3]);
-                sv.setQuequan(data[4]);
+                sv.setMaSV(data[0]);
+                sv.setTenSV(data[1]);
+                sv.setKhoa(data[2]);
+                sv.setNgaySinh(data[3]);
+                sv.setGioiTinh(data[4]);
                 listSV.add(sv);
             }
         } catch (IOException ex) {
@@ -83,7 +83,7 @@ public class LichThiService {
 
     public static SinhVien getListSVById(List<SinhVien> list, String maSV) {
         for (SinhVien sv : list) {
-            if (sv.getMasv().equalsIgnoreCase(maSV)) {
+            if (sv.getMaSV().equalsIgnoreCase(maSV)) {
                 return sv;
             }
         }

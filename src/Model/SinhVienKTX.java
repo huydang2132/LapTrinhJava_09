@@ -1,5 +1,5 @@
 package Model;
-import Model.SinhVien;
+//import Model.SinhVien;
 public class SinhVienKTX extends SinhVien {
     // private String sdt;
     private String ngayDangKy;
@@ -34,6 +34,6 @@ public class SinhVienKTX extends SinhVien {
 
     @Override
     public String toString() {
-        return String.format("%s, %s, %s, %s, %s, %s, %s\n", masv, hoten, ngaysinh, gioitinh, quequan, ngayDangKy, ngayHetHan);
+        return String.format("%s, %s, %s, %s, %s, %s, %s\n", MaSV, TenSV, Khoa, NgaySinh, GioiTinh, ngayDangKy, ngayHetHan);
     }
 }
