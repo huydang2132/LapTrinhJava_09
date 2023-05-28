@@ -1,5 +1,0 @@
-DiemA,
-DiemB,
-DiemC,
-DiemD,
-DiemE,
