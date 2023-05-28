@@ -6,7 +6,7 @@ package GUI;
 
 import Helper.DataValidator;
 import Helper.MessageDialog;
-import Controller.SinhVienDAO;
+import Model.SinhVienDAO;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.DefaultTableModel;
-import models.SinhVien;
+import Model.SinhVien;
 /**
  *
  * @author Admin

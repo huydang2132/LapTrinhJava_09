@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package models;
+package Model;
 
 import java.util.Objects;
 
@@ -11,15 +11,20 @@ import java.util.Objects;
  * @author DELL
  */
 public class SinhVien {
-    private String MaSV,TenSV,Khoa;
-    private String NgaySinh;
-    private String GioiTinh;
+    protected String MaSV,TenSV,Khoa;
+    protected String NgaySinh;
+    protected String GioiTinh;
 
     public SinhVien() {
     }
 
     public SinhVien(String MaSV) {
         
+    }
+
+    public SinhVien(String MaSV, String TenSV) {
+        this.MaSV = MaSV;
+        this.TenSV = TenSV;
     }
 
     public SinhVien(String MaSV, String TenSV, String Khoa, String NgaySinh, String GioiTinh) {
