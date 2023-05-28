@@ -7,7 +7,7 @@ import Model.TrainingEvaluation;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import Sevice.SINHVIENDOC;
+import Service.SINHVIENDOC;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

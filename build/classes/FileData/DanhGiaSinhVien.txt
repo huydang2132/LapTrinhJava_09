@@ -1,6 +1,12 @@
-2,3,0,Yếu
-SV01,Phong,14,Yếu
-a,a,0,null
-SV03,Huy,97,Xuất sắc
-SV04,Huy,0,null
-SV05,Huy,14,Yếu
+SV1, Nguyễn Văn A,0,null
+SV2, Nguyễn Văn B,0,null
+SV3, Nguyễn Thị C,0,null
+SV4, Nguyễn Văn D,0,null
+SV5, Nguyễn Thị E,0,null
+SV6, Nguyễn Văn F,0,null
+SV7, Nguyễn Thị G,0,null
+SV8, Nguyễn Văn H,0,null
+SV9, Nguyễn Thị I,0,null
+SV10, Nguyễn Thị K,0,null
+SV11, Nguyễn Văn L,0,null
+SV12, Nguyễn Thị M,0,null

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import Model.DANHGIASINHVIEN;
-import Sevice.SINHVIENDOC;
+import Service.SINHVIENDOC;
 import Model.SinhVien;
 
 /*
