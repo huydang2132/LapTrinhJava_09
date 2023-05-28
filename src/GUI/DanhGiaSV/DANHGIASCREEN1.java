@@ -1,12 +1,13 @@
-package GUI;
+package GUI.DanhGiaSV;
 
 
-import CSDL.DANHGIASINHVIEN;
-import CSDL.TrainingEvaluation;
+import GUI.DanhGiaSV.DANHGIASCREEN;
+import Model.DANHGIASINHVIEN;
+import Model.TrainingEvaluation;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import Sevices.SINHVIENDOC;
+import Sevice.SINHVIENDOC;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

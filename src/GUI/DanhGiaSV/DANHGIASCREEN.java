@@ -1,12 +1,12 @@
-package GUI;
+package GUI.DanhGiaSV;
 
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import CSDL.DANHGIASINHVIEN;
-import Sevices.SINHVIENDOC;
-import CSDL.SinhVien;
+import Model.DANHGIASINHVIEN;
+import Sevice.SINHVIENDOC;
+import Model.SinhVien;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

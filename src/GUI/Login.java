@@ -4,7 +4,7 @@
  */
 package GUI;
 
-import CSDL.TAIKHOAN;
+import Model.TAIKHOAN;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

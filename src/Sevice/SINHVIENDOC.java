@@ -1,7 +1,7 @@
-package Sevices;
+package Sevice;
 
-import CSDL.DANHGIASINHVIEN;
-import CSDL.SinhVien;
+import Model.DANHGIASINHVIEN;
+import Model.SinhVien;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
