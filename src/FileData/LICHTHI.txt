@@ -1,0 +1,33 @@
+Bảo vệ đồ án tốt nghiệp,Đồ án tốt nghiệp KTPM,28/05/2023,13h,604,A1,6
+SV3
+SV5
+SV12
+SV10
+SV7
+SV9
+
+Kết thúc học phần,An toàn và BMTT,30/05/2023,13h,603,A10,5
+SV10
+SV12
+SV4
+SV8
+SV11
+
+Kết thúc học phần,Thiết kế phần mềm,31/05/2023,8h,902,A1,7
+SV8
+SV6
+SV9
+SV1
+SV11
+SV3
+SV12
+
+Đánh giá thường xuyên,Lập trình Java,29/05/2023,12h30,805,A1,7
+SV1
+SV2
+SV3
+SV4
+SV6
+SV7
+SV9
+

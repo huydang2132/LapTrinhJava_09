@@ -11,9 +11,9 @@ import java.util.Objects;
  * @author DELL
  */
 public class SinhVien {
-    private String MaSV,TenSV,Khoa;
-    private String NgaySinh;
-    private String GioiTinh;
+    protected String MaSV,TenSV,Khoa;
+    protected String NgaySinh;
+    protected String GioiTinh;
 
     public SinhVien() {
     }
