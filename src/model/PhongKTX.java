@@ -1,9 +1,6 @@
-package model;
+package Model;
 
-import java.io.FileNotFoundException;
 import java.util.List;
-
-import service.PhongKTXService;
 
 /**
  * The PhongKTX class represents a dormitory room with various attributes such as room name, room code,

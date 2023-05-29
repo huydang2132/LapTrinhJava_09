@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 /**
  * The SinhVien class represents a student with various attributes such as name, gender, date of birth,

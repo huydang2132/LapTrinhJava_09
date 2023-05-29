@@ -1,4 +1,4 @@
-package model;
+package Model;
 
 public class SinhVienKTX extends SinhVien {
     // private String sdt;

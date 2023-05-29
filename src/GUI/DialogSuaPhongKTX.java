@@ -6,7 +6,7 @@ package GUI;
 
 import javax.swing.JOptionPane;
 
-import model.PhongKTX;
+import Model.PhongKTX;
 
 /**
  *

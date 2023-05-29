@@ -11,9 +11,9 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import model.PhongKTX;
-import model.SinhVienKTX;
-import service.PhongKTXService;
+import Model.PhongKTX;
+import Model.SinhVienKTX;
+import Service.PhongKTXService;
 
 /**
  *

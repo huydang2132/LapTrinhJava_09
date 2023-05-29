@@ -11,8 +11,8 @@ import java.util.List;
 
 import javax.swing.JFrame;
 
-import model.PhongKTX;
-import service.PhongKTXService;
+import Model.PhongKTX;
+import Service.PhongKTXService;
 
 /**
  *

@@ -1,4 +1,4 @@
-package service;
+package Service;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,8 +11,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.PhongKTX;
-import model.SinhVienKTX;
+import Model.PhongKTX;
+import Model.SinhVienKTX;
 
 /**
  * KyTucXaService
