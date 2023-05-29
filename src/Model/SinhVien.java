@@ -19,12 +19,7 @@ public class SinhVien {
     }
 
     public SinhVien(String MaSV) {
-        
-    }
-
-    public SinhVien(String MaSV, String TenSV) {
         this.MaSV = MaSV;
-        this.TenSV = TenSV;
     }
 
     public SinhVien(String MaSV, String TenSV, String Khoa, String NgaySinh, String GioiTinh) {
@@ -81,6 +76,11 @@ public class SinhVien {
         return  MaSV+","+ TenSV+ "," + Khoa +","+ NgaySinh +","+ GioiTinh;
     }
 
+    public SinhVien(String MaSV, String TenSV) {
+        this.MaSV = MaSV;
+        this.TenSV = TenSV;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 3;

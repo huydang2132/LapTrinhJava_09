@@ -8,11 +8,11 @@ package Model;
  *
  * @author Đặng Huy
  */
-public class TAIKHOAN {
+public class TaiKhoan {
     private String tenTaiKhoan;
     private String matKhau;
 
-    public TAIKHOAN(String tenTaiKhoan, String matKhau) {
+    public TaiKhoan(String tenTaiKhoan, String matKhau) {
         this.tenTaiKhoan = tenTaiKhoan;
         this.matKhau = matKhau;
     }

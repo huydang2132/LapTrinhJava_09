@@ -4,8 +4,8 @@
  */
 package GUI;
 
-import Helper.DataValidator;
-import Helper.MessageDialog;
+import Utils.DataValidator;
+import Utils.MessageDialog;
 import Model.SinhVienDAO;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -27,6 +27,7 @@ public class QuanLySinhVien extends javax.swing.JFrame {
      */
     public QuanLySinhVien() {
         initComponents();
+        setLocationRelativeTo(null);
         initTable();
         loadDataToTable();
     }
@@ -317,7 +318,7 @@ public void initTable(){
                 txtTenSV.setText(tv.getTenSV());
                 txtDOB.setText(tv.getNgaySinh());
                 txtKhoa.setText(tv.getKhoa());
-                btnNam.setSelected(tv.getGioiTinh().equals("nam")?true:false);
+                btnNam.setSelected(tv.getGioiTinh().equalsIgnoreCase("Nam")?true:false);
             }
 
         } catch (Exception e) {
@@ -350,7 +351,7 @@ public void initTable(){
             SinhVien newSV = new SinhVien();
             newSV.setMaSV(txtMSV.getText());
             newSV.setTenSV(txtTenSV.getText());
-            newSV.setGioiTinh(btnNam.isSelected()?"nam":"nữ");
+            newSV.setGioiTinh(btnNam.isSelected()?"Nam":"Nữ");
             newSV.setKhoa(txtKhoa.getText());
             newSV.setNgaySinh(txtDOB.getText());
             if(dao.suaThanhVien(txtMSV.getText(), newSV, list)){
@@ -437,8 +438,8 @@ public void initTable(){
                     txtTenSV.setText(tv.getTenSV());
                     txtDOB.setText(tv.getNgaySinh());
                     txtKhoa.setText(tv.getKhoa());
-                    btnNam.setSelected(tv.getGioiTinh().equals("nam")?true:false);
-                    btnNu.setSelected(tv.getGioiTinh().equals("nữ")?true:false);
+                    btnNam.setSelected(tv.getGioiTinh().equals("Nam")?true:false);
+                    btnNu.setSelected(tv.getGioiTinh().equals("Nữ")?true:false);
 
                 }
             }

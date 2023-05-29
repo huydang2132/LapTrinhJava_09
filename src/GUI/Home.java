@@ -15,6 +15,7 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -89,8 +90,6 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnQlTV1;
-    private javax.swing.JButton btnQlTV2;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

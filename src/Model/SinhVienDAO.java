@@ -5,7 +5,7 @@
 package Model;
 
 
-import Helper.MessageDialog;
+import Utils.MessageDialog;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
