@@ -6,6 +6,7 @@
 
  package GUI.QuanLyKTX;
 
+import GUI.Home;
 import java.io.FileNotFoundException;
 import java.util.List;
 
@@ -205,8 +206,8 @@ public class GUIQuanLyKyTucXa extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void quayLaiButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        // TODO add your handling code here:
-        
+        new Home().setVisible(true);
+        dispose();
     }                                             
 
     private void phongKTXButton202ActionPerformed(java.awt.event.ActionEvent evt) {                                                  

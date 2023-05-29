@@ -1,2 +1,2 @@
-huy, 123
+admin, 123
 huydang, 123

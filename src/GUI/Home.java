@@ -4,6 +4,13 @@
  */
 package GUI;
 
+import GUI.DanhGiaSV.DANHGIASCREEN;
+import GUI.QuanLyKTX.GUIQuanLyKyTucXa;
+import GUI.QuanLyLichThi.QuanLyLichThi;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Đặng Huy
@@ -28,11 +35,47 @@ public class Home extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btnSinhVien = new javax.swing.JButton();
+        btnLichThi = new javax.swing.JButton();
+        btnKTX = new javax.swing.JButton();
+        btnRenLuyen = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Trang chủ hệ thống");
+
+        btnSinhVien.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSinhVien.setText("SINH VIÊN");
+        btnSinhVien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSinhVienActionPerformed(evt);
+            }
+        });
+
+        btnLichThi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnLichThi.setText("LỊCH THI");
+        btnLichThi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLichThiActionPerformed(evt);
+            }
+        });
+
+        btnKTX.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnKTX.setText("KÝ TÚC XÁ");
+        btnKTX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKTXActionPerformed(evt);
+            }
+        });
+
+        btnRenLuyen.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnRenLuyen.setText("ĐÁNH GIÁ RÈN LUYỆN");
+        btnRenLuyen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRenLuyenActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -42,17 +85,59 @@ public class Home extends javax.swing.JFrame {
                 .addGap(174, 174, 174)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(201, 201, 201))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSinhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnKTX, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnLichThi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRenLuyen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(361, 361, 361))
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSinhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLichThi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnKTX, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(btnRenLuyen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(84, 84, 84))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSinhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSinhVienActionPerformed
+        new QuanLySinhVien().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnSinhVienActionPerformed
+
+    private void btnLichThiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLichThiActionPerformed
+        new QuanLyLichThi().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnLichThiActionPerformed
+
+    private void btnKTXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKTXActionPerformed
+        try {
+            new GUIQuanLyKyTucXa().setVisible(true);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        dispose();
+    }//GEN-LAST:event_btnKTXActionPerformed
+
+    private void btnRenLuyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRenLuyenActionPerformed
+        new DANHGIASCREEN().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnRenLuyenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,6 +175,10 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnKTX;
+    private javax.swing.JButton btnLichThi;
+    private javax.swing.JButton btnRenLuyen;
+    private javax.swing.JButton btnSinhVien;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

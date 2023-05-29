@@ -1,6 +1,7 @@
 package GUI.DanhGiaSV;
 
 
+import GUI.Home;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -91,6 +92,11 @@ static List<DANHGIASINHVIEN> DGList ;
         jLabel1.setText("Đánh giá rèn luyện");
 
         jButton1.setText("Quay lại");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -182,6 +188,11 @@ static List<DANHGIASINHVIEN> DGList ;
         initdanhgia();
         loadDataToTable();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       new Home().setVisible(true);
+       dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

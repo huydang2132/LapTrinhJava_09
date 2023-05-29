@@ -33,5 +33,12 @@ SV9
 SV10
 SV12
 
-Đánh giá năng lực,Tiếng Anh,28/05/2023,7h30,603,A7,0
+Đánh giá năng lực,Tiếng Anh,28/05/2023,7h30,603,A7,7
+SV6
+SV7
+SV8
+SV9
+SV10
+SV11
+SV12
 
