@@ -1,5 +1,5 @@
 package Model;
-//import Model.SinhVien;
+
 public class SinhVienKTX extends SinhVien {
     // private String sdt;
     private String ngayDangKy;
@@ -7,9 +7,9 @@ public class SinhVienKTX extends SinhVien {
 
     public SinhVienKTX() {}
 
-    public SinhVienKTX(String msv, String hoTen, String gioiTinh, String ngaySinh, String sdt, String queQuan,
+    public SinhVienKTX(String msv, String hoTen, String gioiTinh, String ngaySinh,
             String ngayDangKy, String ngayHetHan) {
-        super(msv, hoTen, gioiTinh, ngaySinh, queQuan);
+        super(msv, hoTen, gioiTinh, ngaySinh);
         this.ngayDangKy = ngayDangKy;
         this.ngayHetHan = ngayHetHan;
     }
@@ -34,6 +34,6 @@ public class SinhVienKTX extends SinhVien {
 
     @Override
     public String toString() {
-        return String.format("%s, %s, %s, %s, %s, %s, %s\n", MaSV, TenSV, Khoa, NgaySinh, GioiTinh, ngayDangKy, ngayHetHan);
+        return String.format("%s, %s, %s, %s, %s, %s\n", MaSV, TenSV, GioiTinh, NgaySinh, ngayDangKy, ngayHetHan);
     }
 }

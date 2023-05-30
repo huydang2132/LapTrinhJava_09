@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 import Model.PhongKTX;
 import Model.SinhVienKTX;
-import Services.PhongKTXService;
+import Service.PhongKTXService;
 
 /**
  *
@@ -33,7 +33,7 @@ public class GUIPhongKTX extends javax.swing.JFrame {
         model = (DefaultTableModel) dsSVTable.getModel();
 
         model.setColumnIdentifiers(new Object[] {
-            "Mã sinh viên", "Họ và tên", "Giới tính", "Ngày sinh", "Số điện thoại", "Quê quán", "Ngày đăng ký", "Ngày hết hạn"
+            "Mã sinh viên", "Họ và tên", "Giới tính", "Ngày sinh", "Ngày đăng ký", "Ngày hết hạn"
         });
 
         reload();
@@ -43,7 +43,7 @@ public class GUIPhongKTX extends javax.swing.JFrame {
         model.setRowCount(0);
         for (SinhVienKTX sv : this.phongKTX.getDsSV()) {
             model.addRow(new Object[] {
-                sv.getMaSV(), sv.getTenSV(), sv.getKhoa(), sv.getNgaySinh(), sv.getGioiTinh(), sv.getNgayDangKy(), sv.getNgayHetHan()
+                sv.getMaSV(), sv.getTenSV(), sv.getGioiTinh(), sv.getNgaySinh(), sv.getNgayDangKy(), sv.getNgayHetHan()
             });
         }
 
@@ -68,8 +68,9 @@ public class GUIPhongKTX extends javax.swing.JFrame {
                 for (int i = viTriXoa.length - 1; i >= 0; i--) {
                     // Thực hiện xóa
                     this.phongKTX.xoaSinhVien(viTriXoa[i]);
-                    this.reload();
                 }
+                JOptionPane.showMessageDialog(rootPane, "Xóa thành công");
+                this.reload();
             }
         }
     }
@@ -95,13 +96,20 @@ public class GUIPhongKTX extends javax.swing.JFrame {
         int response = JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn xóa không?", "Xác nhận xóa", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
         if(response == JOptionPane.YES_OPTION) {
-
+            JOptionPane.showMessageDialog(rootPane, "Không thể thực hiện hành động này!!!");
         }
     }
 
     private void suaPhongHandeler() {
         DialogSuaPhongKTX dialogSuaPhongKTX = new DialogSuaPhongKTX(this, rootPaneCheckingEnabled, this.phongKTX);
         dialogSuaPhongKTX.setVisible(true);
+        
+        this.reload();
+    }
+
+    private void themSinhVienHandler() {
+        GUIThemSinhVienKTX hihi = new GUIThemSinhVienKTX(this, rootPaneCheckingEnabled, this.phongKTX);
+        hihi.setVisible(true);
 
         this.reload();
     }
@@ -305,22 +313,20 @@ public class GUIPhongKTX extends javax.swing.JFrame {
         dsSVTable.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         dsSVTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", null},
-                {"1", null},
-                {"1", null},
-                {"1", null},
-                {"1", null},
-                {null, null}
             },
             new String [] {
-                "Title 1", "Title 2"
+                "Mã sinh viên", "Họ và tên", "Giới tính", "Ngày sinh", "Ngày đăng ký", "Ngày hết hạn"
             }
         ));
         dsSVTable.setRowHeight(25);
         jScrollPane1.setViewportView(dsSVTable);
         if (dsSVTable.getColumnModel().getColumnCount() > 0) {
-            dsSVTable.getColumnModel().getColumn(0).setHeaderValue("Title 1");
-            dsSVTable.getColumnModel().getColumn(1).setHeaderValue("Title 2");
+            dsSVTable.getColumnModel().getColumn(0).setHeaderValue("Mã sinh viên");
+            dsSVTable.getColumnModel().getColumn(1).setHeaderValue("Họ và tên");
+            dsSVTable.getColumnModel().getColumn(2).setHeaderValue("Giới tính");
+            dsSVTable.getColumnModel().getColumn(3).setHeaderValue("Ngày sinh");
+            dsSVTable.getColumnModel().getColumn(4).setHeaderValue("Ngày đăng ký");
+            dsSVTable.getColumnModel().getColumn(5).setHeaderValue("Ngày hết hạn");
         }
 
         giaHanButotn.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -424,6 +430,7 @@ public class GUIPhongKTX extends javax.swing.JFrame {
     private void quayLaiButtonActionPerformed(java.awt.event.ActionEvent evt) {                                              
         // TODO add your handling code here:
         GUIQuanLyKyTucXa.main(null);
+        setVisible(false);
         dispose();
     }                                             
 
@@ -434,6 +441,7 @@ public class GUIPhongKTX extends javax.swing.JFrame {
 
     private void themSinhVienButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
         // TODO add your handling code here:
+        this.themSinhVienHandler();
     }   
     
     private void giaHanButotnActionPerformed(java.awt.event.ActionEvent evt) {                                             

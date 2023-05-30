@@ -231,16 +231,16 @@ public class DialogGiaHan extends javax.swing.JDialog {
     }                                                   
 
     private void xacNhanButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        String ngayHiaHanMoi = ngayHetHanTextField.getText();
-        if (ngayHiaHanMoi.equals(this.sv.getNgayHetHan())) {
+        String ngayHetHanMoi = ngayHetHanTextField.getText();
+        if (ngayHetHanMoi.equals(this.sv.getNgayHetHan())) {
             JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập giá trị mới cho \"Ngày hết hạn\"");
-        } else if(!Check.checkDateFormat(ngayHiaHanMoi)) {
+        } else if(!Check.checkDateFormat(ngayHetHanMoi)) {
             JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập giá trị mới \"Ngày hết hạn\" đúng định dạng: dd/MM/yyyy!");
         } else {
             int respone = JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn sửa không?", "Xác nhận sửa", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             
             if(respone == JOptionPane.YES_OPTION) {
-                this.sv.setNgayHetHan(ngayHiaHanMoi);
+                this.sv.setNgayHetHan(ngayHetHanMoi);
                 this.dispose();
             }
         }

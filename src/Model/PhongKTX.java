@@ -1,9 +1,6 @@
 package Model;
 
-import java.io.FileNotFoundException;
 import java.util.List;
-
-import Services.PhongKTXService;
 
 /**
  * The PhongKTX class represents a dormitory room with various attributes such as room name, room code,
@@ -26,6 +23,11 @@ public class PhongKTX {
 
     public void xoaSinhVien(int pos) {
         this.dsSV.remove(pos);
+        this.soSVHienTai = this.dsSV.size();
+    }
+
+    public void themSinhVien(SinhVienKTX e) {
+        this.dsSV.add(e);
         this.soSVHienTai = this.dsSV.size();
     }
     

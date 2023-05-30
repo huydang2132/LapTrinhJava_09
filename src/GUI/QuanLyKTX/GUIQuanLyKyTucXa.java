@@ -13,7 +13,7 @@ import java.util.List;
 import javax.swing.JFrame;
 
 import Model.PhongKTX;
-import Services.PhongKTXService;
+import Service.PhongKTXService;
 
 /**
  *

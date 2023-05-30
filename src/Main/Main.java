@@ -4,7 +4,6 @@
  */
 package Main;
 
-import GUI.QuanLyKTX.GUIQuanLyKyTucXa;
 import GUI.Login;
 
 /**
