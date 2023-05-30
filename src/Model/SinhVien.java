@@ -29,6 +29,7 @@ public class SinhVien {
         this.NgaySinh = NgaySinh;
         this.GioiTinh = GioiTinh;
     }
+
     
     public String getMaSV() {
         return MaSV;
@@ -81,6 +82,13 @@ public class SinhVien {
         this.TenSV = TenSV;
     }
     
+    public SinhVien(String msv, String hoTen, String gioiTinh, String ngaySinh) {
+        this.MaSV = msv;
+        this.TenSV = hoTen;
+        this.GioiTinh = gioiTinh;
+        this.NgaySinh = ngaySinh;
+    }
+
     @Override
     public int hashCode() {
         int hash = 3;
