@@ -1,7 +1,9 @@
-package utils;
+package Utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -35,7 +37,14 @@ public class Check {
         return true;
     }
 
+    public static boolean isFuture(String before, String after) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dateAfter = LocalDate.parse(after, formatter);
+        LocalDate dateBefore = LocalDate.parse(before, formatter);
+        return dateBefore.isBefore(dateAfter);
+    }
+
     public static void main(String[] args) {
-        System.out.println(isNumeric("2"));
+        System.out.println(isFuture("30/05/2023", "30/05/2023"));
     }
 }

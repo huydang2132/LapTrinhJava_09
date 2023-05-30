@@ -2,12 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package GUI;
+package GUI.QuanLyKTX;
 
 import javax.swing.JOptionPane;
 
 import Model.SinhVienKTX;
-import utils.Check;
+import Utils.Check;
 
 /**
  *
@@ -61,7 +61,7 @@ public class DialogGiaHan extends javax.swing.JDialog {
 
         msvTextField.setEditable(false);
         msvTextField.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        msvTextField.setText(this.sv.getMsv());
+        msvTextField.setText(this.sv.getMaSV());
         msvTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 msvTextFieldActionPerformed(evt);
@@ -76,7 +76,7 @@ public class DialogGiaHan extends javax.swing.JDialog {
 
         hoTenTextField.setEditable(false);
         hoTenTextField.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        hoTenTextField.setText(this.sv.getHoTen());
+        hoTenTextField.setText(this.sv.getTenSV());
         hoTenTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hoTenTextFieldActionPerformed(evt);
@@ -230,16 +230,16 @@ public class DialogGiaHan extends javax.swing.JDialog {
     }                                                   
 
     private void xacNhanButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        String ngayHiaHanMoi = ngayHetHanTextField.getText();
-        if (ngayHiaHanMoi.equals(this.sv.getNgayHetHan())) {
+        String ngayHetHanMoi = ngayHetHanTextField.getText();
+        if (ngayHetHanMoi.equals(this.sv.getNgayHetHan())) {
             JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập giá trị mới cho \"Ngày hết hạn\"");
-        } else if(!Check.checkDateFormat(ngayHiaHanMoi)) {
+        } else if(!Check.checkDateFormat(ngayHetHanMoi)) {
             JOptionPane.showMessageDialog(rootPane, "Vui lòng nhập giá trị mới \"Ngày hết hạn\" đúng định dạng: dd/MM/yyyy!");
         } else {
             int respone = JOptionPane.showConfirmDialog(rootPane, "Bạn có chắc chắn muốn sửa không?", "Xác nhận sửa", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             
             if(respone == JOptionPane.YES_OPTION) {
-                this.sv.setNgayHetHan(ngayHiaHanMoi);
+                this.sv.setNgayHetHan(ngayHetHanMoi);
                 this.dispose();
             }
         }

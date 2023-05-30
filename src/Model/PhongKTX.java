@@ -25,6 +25,11 @@ public class PhongKTX {
         this.dsSV.remove(pos);
         this.soSVHienTai = this.dsSV.size();
     }
+
+    public void themSinhVien(SinhVienKTX e) {
+        this.dsSV.add(e);
+        this.soSVHienTai = this.dsSV.size();
+    }
     
     @Override
     public String toString() {

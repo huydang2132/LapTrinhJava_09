@@ -1,69 +1,113 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Model;
 
+import java.util.Objects;
+
 /**
- * The SinhVien class represents a student with various attributes such as name, gender, date of birth,
- * phone number, hometown
+ *
+ * @author DELL
  */
 public class SinhVien {
-    protected String msv;
-    protected String hoTen;
-    protected String gioiTinh;
-    protected String ngaySinh;
-    protected String sdt;
-    protected String queQuan;
-    
-    @Override
-    public String toString() {
-        return "SinhVien [msv=" + msv + ", hoTen=" + hoTen + ", gioiTinh=" + gioiTinh + ", ngaySinh=" + ngaySinh
-                + ", sdt=" + sdt + ", queQuan=" + queQuan + "]";
-    }
-
-    public SinhVien(String msv, String hoTen, String gioiTinh, String ngaySinh, String sdt, String queQuan) {
-        this.msv = msv;
-        this.hoTen = hoTen;
-        this.gioiTinh = gioiTinh;
-        this.ngaySinh = ngaySinh;
-        this.sdt = sdt;
-        this.queQuan = queQuan;
-    }
+    protected String MaSV,TenSV,Khoa;
+    protected String NgaySinh;
+    protected String GioiTinh;
 
     public SinhVien() {
     }
+
+    public SinhVien(String MaSV) {
+        
+    }
+
+    public SinhVien(String MaSV, String TenSV, String Khoa, String NgaySinh, String GioiTinh) {
+        this.MaSV = MaSV;
+        this.TenSV = TenSV;
+        this.Khoa = Khoa;
+        this.NgaySinh = NgaySinh;
+        this.GioiTinh = GioiTinh;
+    }
+
     
-    public String getMsv() {
-        return msv;
+    public String getMaSV() {
+        return MaSV;
     }
-    public String getHoTen() {
-        return hoTen;
+
+    public void setMaSV(String MaSV) {
+        this.MaSV = MaSV;
     }
-    public String getGioiTinh() {
-        return gioiTinh;
+
+    public String getTenSV() {
+        return TenSV;
     }
+
+    public void setTenSV(String TenSV) {
+        this.TenSV = TenSV;
+    }
+
+    public String getKhoa() {
+        return Khoa;
+    }
+
+    public void setKhoa(String Khoa) {
+        this.Khoa = Khoa;
+    }
+
     public String getNgaySinh() {
-        return ngaySinh;
+        return NgaySinh;
     }
-    public String getSdt() {
-        return sdt;
+
+    public void setNgaySinh(String NgaySinh) {
+        this.NgaySinh = NgaySinh;
     }
-    public String getQueQuan() {
-        return queQuan;
+
+    public String getGioiTinh() {
+        return GioiTinh;
     }
-    public void setMsv(String msv) {
-        this.msv = msv;
+
+    public void setGioiTinh(String GioiTinh) {
+        this.GioiTinh = GioiTinh;
     }
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+
+    
+    @Override
+    public String toString() {
+        return  MaSV+","+ TenSV+ "," + Khoa +","+ NgaySinh +","+ GioiTinh;
     }
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
+
+    public SinhVien(String MaSV, String TenSV) {
+        this.MaSV = MaSV;
+        this.TenSV = TenSV;
     }
-    public void setNgaySinh(String ngaySinh) {
-        this.ngaySinh = ngaySinh;
+    
+    public SinhVien(String msv, String hoTen, String gioiTinh, String ngaySinh) {
+        this.MaSV = msv;
+        this.TenSV = hoTen;
+        this.GioiTinh = gioiTinh;
+        this.NgaySinh = ngaySinh;
     }
-    public void setSdt(String sdt) {
-        this.sdt = sdt;
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        return hash;
     }
-    public void setQueQuan(String queQuan) {
-        this.queQuan = queQuan;
-    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final SinhVien other = (SinhVien) obj;
+        return Objects.equals(this.MaSV, other.MaSV);
+    }  
+
 }
