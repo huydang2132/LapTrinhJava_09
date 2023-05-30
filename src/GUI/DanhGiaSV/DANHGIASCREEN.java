@@ -28,6 +28,7 @@ static List<DANHGIASINHVIEN> DGList ;
      */
     public DANHGIASCREEN() {
         initComponents();
+        setLocationRelativeTo(null);
         tblModel = (DefaultTableModel) jTable1.getModel();
         SINHVIENDOC doc=new SINHVIENDOC();
         list = doc.docfile();

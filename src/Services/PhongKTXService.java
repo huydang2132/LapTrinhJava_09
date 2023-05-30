@@ -1,10 +1,9 @@
-package Services;
+package Service;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -44,7 +43,7 @@ public class PhongKTXService {
                 for (int j = 0; j < phongKTX.getSoSVHienTai(); j++) {
                     String[] infoSV = reader.readLine().split(", ");
 
-                    SinhVienKTX sv = new SinhVienKTX(infoSV[0], infoSV[1], infoSV[2], infoSV[3], infoSV[4], infoSV[5], infoSV[6], infoSV[7]);
+                    SinhVienKTX sv = new SinhVienKTX(infoSV[0], infoSV[1], infoSV[2], infoSV[3], infoSV[4], infoSV[5]);
 
                     dsSV.add(sv);
                 }
@@ -97,6 +96,28 @@ public class PhongKTXService {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static boolean daThuocKTX(String msv) {
+        try {
+            List<PhongKTX> dsPhong = getListPhongFromFile();
+            List<SinhVienKTX> dsSV = new ArrayList<>();
+            for (PhongKTX phongKTX : dsPhong) {
+                for (SinhVienKTX sv : phongKTX.getDsSV()) {
+                    dsSV.add(sv);
+                }
+            }
+            
+            for (SinhVienKTX sv : dsSV) {
+                if(sv.getMaSV().equals(msv)) {
+                    return true;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public static void main(String[] args) throws FileNotFoundException {

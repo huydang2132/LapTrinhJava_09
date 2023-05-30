@@ -39,13 +39,13 @@ public class LichThiService {
             while ((line = read.readLine()) != null) {
                 LichThi lichthi = new LichThi();
                 String[] data = line.split(",");
-                lichthi.setTenKyThi(data[0]);
-                lichthi.setMonThi(data[1]);
-                lichthi.setNgayThi(data[2]);
-                lichthi.setCaThi(data[3]);
-                lichthi.setPhongThi(data[4]);
-                lichthi.setDiemThi(data[5]);
-                lichthi.setSoSV(Integer.parseInt(data[6]));
+                lichthi.setTenKyThi(data[0].trim());
+                lichthi.setMonThi(data[1].trim());
+                lichthi.setNgayThi(data[2].trim());
+                lichthi.setCaThi(data[3].trim());
+                lichthi.setPhongThi(data[4].trim());
+                lichthi.setDiemThi(data[5].trim());
+                lichthi.setSoSV(Integer.parseInt(data[6].trim()));
                 List<String> listSV = new ArrayList<>();
                 for (int i = 0; i < lichthi.getSoSV(); i++) {
                     String dataSV = read.readLine();

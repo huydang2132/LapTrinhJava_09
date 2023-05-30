@@ -7,6 +7,6 @@ SV6, Nguyễn Văn F,0,null
 SV7, Nguyễn Thị G,0,null
 SV8, Nguyễn Văn H,0,null
 SV9, Nguyễn Thị I,0,null
-SV10, Nguyễn Thị K,0,null
+SV10, Nguyễn Thị K,98,Xuất sắc
 SV11, Nguyễn Văn L,107,Xuất sắc
 SV12, Nguyễn Thị M,42,Yếu

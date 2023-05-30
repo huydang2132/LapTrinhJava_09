@@ -16,7 +16,7 @@ import Model.PhongKTX;
 import Model.SinhVien;
 import Model.SinhVienKTX;
 import Service.PhongKTXService;
-import Service.SINHVIENDOC;
+import Services.SINHVIENDOC;
 import Utils.Check;
 
 /**
