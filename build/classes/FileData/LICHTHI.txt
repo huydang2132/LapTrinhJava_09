@@ -6,12 +6,13 @@ SV10
 SV7
 SV9
 
-Kết thúc học phần,An toàn và BMTT,30/05/2023,13h,603,A10,5
+Kết thúc học phần,An toàn và BMTT,30/05/2023,13h,603,A10,6
 SV10
 SV12
 SV4
 SV8
 SV11
+SV3
 
 Kết thúc học phần,Thiết kế phần mềm,31/05/2023,8h,902,A1,6
 SV8
@@ -32,7 +33,7 @@ SV9
 SV10
 SV12
 
-Đánh giá năng lực,Tiếng Anh,28/05/2023,7h30,603,A7,7
+Đánh giá năng lực,Tiếng Anh,28/05/2023,7h30,603,A7,9
 SV6
 SV7
 SV8
@@ -40,4 +41,6 @@ SV9
 SV10
 SV11
 SV12
+SV5
+SV3
 

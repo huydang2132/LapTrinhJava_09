@@ -5,6 +5,7 @@
 package GUI;
 
 import Model.TaiKhoan;
+import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -52,6 +53,11 @@ public class Login extends javax.swing.JFrame {
         txtName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyPressed(evt);
+            }
+        });
 
         btnLogin.setBackground(new java.awt.Color(0, 158, 15));
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -110,6 +116,18 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        this.handleDangnhap();
+    }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER){
+            this.handleDangnhap();
+        }
+    }//GEN-LAST:event_txtPasswordKeyPressed
+    /**
+     * @param args the command line arguments
+     */
+    private void handleDangnhap(){
         String name = txtName.getText();
         String password = txtPassword.getText();
         if (name.trim().equals("") || password.trim().equals("")) {
@@ -130,10 +148,7 @@ public class Login extends javax.swing.JFrame {
                 System.out.println(ex.toString());
             }
         }
-    }//GEN-LAST:event_btnLoginActionPerformed
-    /**
-     * @param args the command line arguments
-     */
+    }
     private ArrayList<TaiKhoan> AccFromFile() throws FileNotFoundException {
         ArrayList<TaiKhoan> listAcc = new ArrayList<TaiKhoan>();
         try {
@@ -157,7 +172,7 @@ public class Login extends javax.swing.JFrame {
         String name = txtName.getText();
         String password = txtPassword.getText();
         for(TaiKhoan tk:list){
-            if(name.equals(tk.getTenTaiKhoan())&&password.equals(tk.getMatKhau())){
+            if(name.equalsIgnoreCase(tk.getTenTaiKhoan())&&password.equals(tk.getMatKhau())){
                 return true;
             }
         }

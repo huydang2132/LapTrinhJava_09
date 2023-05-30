@@ -34,6 +34,7 @@ public class GUIThemSinhVienKTX extends javax.swing.JDialog {
         super(parent, modal);
         this.phongKTX = phongKTX;
         initComponents();
+        setLocationRelativeTo(null);
         model = (DefaultTableModel) table.getModel();
 
         model.setColumnIdentifiers(new Object[] {

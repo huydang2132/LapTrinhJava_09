@@ -10,3 +10,4 @@ SV11, Nguyễn Văn L, Ngôn ngữ Trung, 01/01/2002, Nam
 SV12, Nguyễn Thị M, Ngôn ngữ Trung, 01/01/2002, Nữ
 SV2, Nguyễn Văn B, CNTT, 01/01/2002,nam
 SV3, Nguyễn Thị C, CNTT, 01/01/2002,nữ
+SV13,Phạm Văn Nhất,Kế toán,05/12/2002,nam
