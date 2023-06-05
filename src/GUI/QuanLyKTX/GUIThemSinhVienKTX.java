@@ -18,6 +18,9 @@ import Model.SinhVienKTX;
 import Service.PhongKTXService;
 import Services.SINHVIENDOC;
 import Utils.Check;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -106,6 +109,11 @@ public class GUIThemSinhVienKTX extends javax.swing.JDialog {
                     this.dispose();
                 }
             }
+        }
+        try {
+            PhongKTXService.updateFile(phongKTX);
+        } catch (IOException ex) {
+            Logger.getLogger(GUIThemSinhVienKTX.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

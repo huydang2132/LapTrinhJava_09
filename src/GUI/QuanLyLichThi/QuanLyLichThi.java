@@ -340,13 +340,17 @@ public class QuanLyLichThi extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnThiSinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThiSinhActionPerformed
-        int selectedIndex = tableLichThi.getSelectedRow();
-        if (selectedIndex == -1) {
-            JOptionPane.showMessageDialog(this, "Hãy chọn một lịch thi để cập nhật thí sinh!", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
-        } else {
-            ThiSinh thisinh = new ThiSinh(list.get(selectedIndex).getListSV(), list.get(selectedIndex), list);
-            thisinh.setVisible(true);
-            dispose();
+        try {
+            int selectedIndex = tableLichThi.getSelectedRow();
+            if (selectedIndex == -1) {
+                JOptionPane.showMessageDialog(this, "Hãy chọn một lịch thi để cập nhật thí sinh!", "Cảnh báo", JOptionPane.WARNING_MESSAGE);
+            } else {
+                ThiSinh thisinh = new ThiSinh(list.get(selectedIndex).getListSV(), list.get(selectedIndex), list);
+                thisinh.setVisible(true);
+                dispose();
+            }
+        } catch (Exception ex) {
+            System.out.print(ex.toString());
         }
     }//GEN-LAST:event_btnThiSinhActionPerformed
     private void btnXoaLichActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaLichActionPerformed

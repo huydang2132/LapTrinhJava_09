@@ -7,21 +7,20 @@ package GUI;
 import Utils.DataValidator;
 import Utils.MessageDialog;
 import Model.SinhVienDAO;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableColumnModel;
 import javax.swing.table.DefaultTableModel;
 import Model.SinhVien;
+
 /**
  *
  * @author Admin
  */
 public class QuanLySinhVien extends javax.swing.JFrame {
+
     private DefaultTableModel tblModel;
+
     /**
      * Creates new form QuanLySinhVien
      */
@@ -31,22 +30,24 @@ public class QuanLySinhVien extends javax.swing.JFrame {
         initTable();
         loadDataToTable();
     }
-public void initTable(){
+
+    public void initTable() {
         tblModel = new DefaultTableModel();
-        tblModel.setColumnIdentifiers(new String[]{"Mã sinh viên","Họ tên","Giới tính","Ngày sinh","Khoa"});
+        tblModel.setColumnIdentifiers(new String[]{"Mã sinh viên", "Họ tên", "Giới tính", "Ngày sinh", "Khoa"});
         tbSinhVien.setModel(tblModel);
-        
+
     }
-    public void loadDataToTable(){
+
+    public void loadDataToTable() {
         try {
-            SinhVienDAO dao=new SinhVienDAO();
-            List<SinhVien> list=dao.docFile();
+            SinhVienDAO dao = new SinhVienDAO();
+            List<SinhVien> list = dao.docFile();
             tblModel.setRowCount(0);
             for (SinhVien sv : list) {
                 tblModel.addRow(new Object[]{
-                    sv.getMaSV(),sv.getTenSV(),sv.getGioiTinh(),sv.getNgaySinh(),sv.getKhoa()
+                    sv.getMaSV(), sv.getTenSV(), sv.getGioiTinh(), sv.getNgaySinh(), sv.getKhoa()
                 });
-                
+
             }
             tblModel.fireTableDataChanged();
         } catch (Exception e) {
@@ -54,6 +55,7 @@ public void initTable(){
             MessageDialog.showErrorMessage(this, e.getMessage(), "Lỗi");
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -314,22 +316,22 @@ public void initTable(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimActionPerformed
-        StringBuilder sb=new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         DataValidator.validateEmpty(txtSearchMSV, sb, "Mã sinh viên không được để trống");
-        if(sb.length()>0){
+        if (sb.length() > 0) {
             MessageDialog.showErrorMessage(this, sb.toString(), "Lỗi");
             return;
         }
         try {
-            SinhVienDAO dao=new SinhVienDAO();
-            List<SinhVien> list=dao.docFile();
-            SinhVien tv=dao.getSVbyMaSV(txtSearchMSV.getText(), list);
-            if(tv!=null){
+            SinhVienDAO dao = new SinhVienDAO();
+            List<SinhVien> list = dao.docFile();
+            SinhVien tv = dao.getSVbyMaSV(txtSearchMSV.getText(), list);
+            if (tv != null) {
                 txtMSV.setText(tv.getMaSV());
                 txtTenSV.setText(tv.getTenSV());
                 txtDOB.setText(tv.getNgaySinh());
                 txtKhoa.setText(tv.getKhoa());
-                btnNam.setSelected(tv.getGioiTinh().equalsIgnoreCase("Nam")?true:false);
+                btnNam.setSelected(tv.getGioiTinh().equalsIgnoreCase("Nam") ? true : false);
             }
 
         } catch (Exception e) {
@@ -344,34 +346,33 @@ public void initTable(){
     }//GEN-LAST:event_btnNhapMoiActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        StringBuilder sb=new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         DataValidator.validateEmpty(txtMSV, sb, "Mã sinh viên không được để trống");
         DataValidator.validateEmpty(txtTenSV, sb, "Tên sinh viên không được để trống");
         DataValidator.validateEmpty(txtDOB, sb, "Ngày sinh không được để trống");
         DataValidator.validateEmpty(txtKhoa, sb, "Tên khoa không được để trống");
-        if(sb.length()>0){
+        if (sb.length() > 0) {
             MessageDialog.showErrorMessage(this, sb.toString(), "Lỗi");
             return;
         }
-        if(MessageDialog.showConfirm(this, "Bạn có muốn sửa sinh viên không", "Hỏi") == JOptionPane.NO_OPTION){
+        if (MessageDialog.showConfirm(this, "Bạn có muốn sửa sinh viên không", "Hỏi") == JOptionPane.NO_OPTION) {
             return;
         }
         try {
-            SinhVienDAO dao=new SinhVienDAO();
-            List<SinhVien> list=dao.docFile();
+            SinhVienDAO dao = new SinhVienDAO();
+            List<SinhVien> list = dao.docFile();
             SinhVien newSV = new SinhVien();
             newSV.setMaSV(txtMSV.getText());
             newSV.setTenSV(txtTenSV.getText());
-            newSV.setGioiTinh(btnNam.isSelected()?"Nam":"Nữ");
+            newSV.setGioiTinh(btnNam.isSelected() ? "Nam" : "Nữ");
             newSV.setKhoa(txtKhoa.getText());
             newSV.setNgaySinh(txtDOB.getText());
-            if(dao.suaThanhVien(txtMSV.getText(), newSV, list)){
+            if (dao.suaThanhVien(txtMSV.getText(), newSV, list)) {
                 MessageDialog.showMessage(this, "Sinh viên đã được sửa", "Thông báo");
-            }
-            else{
+            } else {
                 MessageDialog.showMessage(this, "Sinh viên chưa được sửa", "Cảnh báo");
             }
-            dao.luuFile(list,false);
+            dao.luuFile(list, false);
             loadDataToTable();
 
         } catch (Exception e) {
@@ -384,24 +385,23 @@ public void initTable(){
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         StringBuilder sb = new StringBuilder();
         DataValidator.validateEmpty(txtMSV, sb, "Mã sinh viên không được để trống");
-        if(sb.length()>0){
+        if (sb.length() > 0) {
             MessageDialog.showErrorMessage(this, sb.toString(), "Lỗi");
             return;
         }
-        if(MessageDialog.showConfirm(this, "Bạn có muốn xóa sinh viên không", "Hỏi") == JOptionPane.NO_OPTION){
+        if (MessageDialog.showConfirm(this, "Bạn có muốn xóa sinh viên không", "Hỏi") == JOptionPane.NO_OPTION) {
             return;
         }
         try {
             SinhVienDAO dao = new SinhVienDAO();
-            List<SinhVien> list=dao.docFile();
+            List<SinhVien> list = dao.docFile();
 
-            if(dao.xoaThanhVien(txtMSV.getText(), list)){
+            if (dao.xoaThanhVien(txtMSV.getText(), list)) {
                 MessageDialog.showMessage(this, "Thành vien  đã được xóa", "Thông báo");
-            }
-            else{
+            } else {
                 MessageDialog.showMessage(this, "Sinh viên chưa được xóa", "Cảnh báo");
             }
-            dao.luuFile(list,false);
+            dao.luuFile(list, false);
             loadDataToTable();
 
         } catch (Exception e) {
@@ -411,21 +411,21 @@ public void initTable(){
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnLuuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuActionPerformed
-        StringBuilder sb=new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         DataValidator.validateEmpty(txtMSV, sb, "Mã sinh viên không được để trống");
         DataValidator.validateEmpty(txtTenSV, sb, "Tên sinh viên không được để trống");
         DataValidator.validateEmpty(txtDOB, sb, "Ngày sinh không được để trống");
         DataValidator.validateEmpty(txtKhoa, sb, "Tên khoa không được để trống");
-        if(sb.length()>0){
+        if (sb.length() > 0) {
             MessageDialog.showErrorMessage(this, sb.toString(), "Lỗi");
             return;
         }
         try {
-            SinhVienDAO dao=new SinhVienDAO();
-            List<SinhVien> list=new ArrayList<>();
-            SinhVien sv = new SinhVien(txtMSV.getText(), txtTenSV.getText(), txtKhoa.getText(), txtDOB.getText(), btnNam.isSelected()?"nam":"nữ");
+            SinhVienDAO dao = new SinhVienDAO();
+            List<SinhVien> list = new ArrayList<>();
+            SinhVien sv = new SinhVien(txtMSV.getText(), txtTenSV.getText(), txtKhoa.getText(), txtDOB.getText(), btnNam.isSelected() ? "Nam" : "Nữ");
             list.add(sv);
-            dao.luuFile(list,true);
+            dao.luuFile(list, true);
             MessageDialog.showMessage(this, "Sinh viên đã được lưu", "Thông báo");
             loadDataToTable();
 
@@ -438,19 +438,19 @@ public void initTable(){
 
     private void tbSinhVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbSinhVienMouseClicked
         try {
-            int row=tbSinhVien.getSelectedRow();
-            if(row>=0){
-                String id=(String) tbSinhVien.getValueAt(row, 0);
-                SinhVienDAO dao=new SinhVienDAO();
-                List<SinhVien> list=dao.docFile();
-                SinhVien tv=dao.getSVbyMaSV(id, list);
-                if(tv!=null){
+            int row = tbSinhVien.getSelectedRow();
+            if (row >= 0) {
+                String id = (String) tbSinhVien.getValueAt(row, 0);
+                SinhVienDAO dao = new SinhVienDAO();
+                List<SinhVien> list = dao.docFile();
+                SinhVien tv = dao.getSVbyMaSV(id, list);
+                if (tv != null) {
                     txtMSV.setText(tv.getMaSV());
                     txtTenSV.setText(tv.getTenSV());
                     txtDOB.setText(tv.getNgaySinh());
                     txtKhoa.setText(tv.getKhoa());
-                    btnNam.setSelected(tv.getGioiTinh().equals("Nam")?true:false);
-                    btnNu.setSelected(tv.getGioiTinh().equals("Nữ")?true:false);
+                    btnNam.setSelected(tv.getGioiTinh().equalsIgnoreCase("Nam") ? true : false);
+                    btnNu.setSelected(tv.getGioiTinh().equalsIgnoreCase("Nữ") ? true : false);
 
                 }
             }
@@ -465,7 +465,7 @@ public void initTable(){
         new Home().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnBackActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */

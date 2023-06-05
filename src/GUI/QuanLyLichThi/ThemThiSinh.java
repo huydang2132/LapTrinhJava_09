@@ -202,19 +202,22 @@ public class ThemThiSinh extends javax.swing.JFrame {
                             }
                         }
                     }
+                    JOptionPane.showMessageDialog(this, "Thêm thành công!", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                 }
             } else {
-                for (LichThi lich : listLichThi) {
-                    if (lich.equals(lichthi)) {
-                        lich.themSV(searchSV.getMaSV());
+                if (confirm == JOptionPane.YES_OPTION) {
+                    for (LichThi lich : listLichThi) {
+                        if (lich.equals(lichthi)) {
+                            lich.themSV(searchSV.getMaSV());
+                        }
                     }
+                    txtMaSV.setText("");
+                    searchSV = null;
+                    JOptionPane.showMessageDialog(this, "Thêm thành công!", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
                 }
-                txtMaSV.setText("");
-                searchSV = null;
             }
             showTableData();
             tsScreen.showTableDataTS();
-            JOptionPane.showMessageDialog(this, "Thêm thành công!", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
             try {
                 writeFile(fileName, listLichThi);
             } catch (Exception ex) {
@@ -262,7 +265,7 @@ public class ThemThiSinh extends javax.swing.JFrame {
 
     private SinhVien searchSVbYId(String MaSV) {
         SinhVien sv = new SinhVien();
-        for (int i = 0; i < listMSV.size(); i++) {
+        for (int i = 0; i < listSV.size(); i++) {
             sv = getListSVById(listSV, MaSV);
         }
         return sv;

@@ -21,6 +21,12 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    public Home(String name) {
+        initComponents();
+        setLocationRelativeTo(null);
+        txtNameAdmin.setText("Xin chào, " + name);
+    }
+    
     public Home() {
         initComponents();
         setLocationRelativeTo(null);
@@ -41,6 +47,8 @@ public class Home extends javax.swing.JFrame {
         btnKTX = new javax.swing.JButton();
         btnRenLuyen = new javax.swing.JButton();
         btnThongKe = new javax.swing.JButton();
+        txtNameAdmin = new javax.swing.JLabel();
+        btnDangXuat = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,6 +56,7 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setText("Trang chủ hệ thống");
 
         btnSinhVien.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSinhVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-users-50.png"))); // NOI18N
         btnSinhVien.setText("SINH VIÊN");
         btnSinhVien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,6 +65,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         btnLichThi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnLichThi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-schedule-50.png"))); // NOI18N
         btnLichThi.setText("LỊCH THI");
         btnLichThi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +74,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         btnKTX.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnKTX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-bunk-bed-50.png"))); // NOI18N
         btnKTX.setText("KÝ TÚC XÁ");
         btnKTX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,6 +83,7 @@ public class Home extends javax.swing.JFrame {
         });
 
         btnRenLuyen.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnRenLuyen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Danh_gia.png"))); // NOI18N
         btnRenLuyen.setText("ĐÁNH GIÁ RÈN LUYỆN");
         btnRenLuyen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,10 +92,25 @@ public class Home extends javax.swing.JFrame {
         });
 
         btnThongKe.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-statistic-50.png"))); // NOI18N
         btnThongKe.setText("THỐNG KÊ");
         btnThongKe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThongKeActionPerformed(evt);
+            }
+        });
+
+        txtNameAdmin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtNameAdmin.setText("welcome");
+
+        btnDangXuat.setBackground(new java.awt.Color(255, 0, 0));
+        btnDangXuat.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDangXuat.setForeground(new java.awt.Color(255, 255, 255));
+        btnDangXuat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-exit-30.png"))); // NOI18N
+        btnDangXuat.setText("Đăng xuất");
+        btnDangXuat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDangXuatActionPerformed(evt);
             }
         });
 
@@ -97,33 +124,42 @@ public class Home extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(123, 123, 123)
                         .addComponent(jLabel1))
-                    .addComponent(btnThongKe, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnKTX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnSinhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnLichThi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnRenLuyen))))
-                .addContainerGap(79, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(btnThongKe, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRenLuyen, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(txtNameAdmin)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnDangXuat))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btnKTX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnSinhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(48, 48, 48)
+                            .addComponent(btnLichThi, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNameAdmin)
+                    .addComponent(btnDangXuat))
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnLichThi, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(btnSinhVien, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                    .addComponent(btnLichThi, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                    .addComponent(btnSinhVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnKTX, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRenLuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(btnThongKe, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                    .addComponent(btnThongKe, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addComponent(btnRenLuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
 
         pack();
@@ -131,12 +167,12 @@ public class Home extends javax.swing.JFrame {
 
     private void btnSinhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSinhVienActionPerformed
         new QuanLySinhVien().setVisible(true);
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_btnSinhVienActionPerformed
 
     private void btnLichThiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLichThiActionPerformed
         new QuanLyLichThi().setVisible(true);
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_btnLichThiActionPerformed
 
     private void btnKTXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKTXActionPerformed
@@ -145,18 +181,23 @@ public class Home extends javax.swing.JFrame {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_btnKTXActionPerformed
 
     private void btnRenLuyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRenLuyenActionPerformed
         new DANHGIASCREEN().setVisible(true);
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_btnRenLuyenActionPerformed
 
     private void btnThongKeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongKeActionPerformed
        new ThongKe().setVisible(true);
-       dispose();
+       this.dispose();
     }//GEN-LAST:event_btnThongKeActionPerformed
+
+    private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
+        new Login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnDangXuatActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,11 +235,13 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDangXuat;
     private javax.swing.JButton btnKTX;
     private javax.swing.JButton btnLichThi;
     private javax.swing.JButton btnRenLuyen;
     private javax.swing.JButton btnSinhVien;
     private javax.swing.JButton btnThongKe;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel txtNameAdmin;
     // End of variables declaration//GEN-END:variables
 }

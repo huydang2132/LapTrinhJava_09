@@ -1,4 +1,4 @@
-Bảo vệ đồ án tốt nghiệp,Đồ án tốt nghiệp KTPM,28/05/2023,13h,604,A1,6
+Bảo vệ đồ án tốt nghiệp,Đồ án tốt nghiệp KTPM,20/06/2023,13h,604,A1,6
 SV3
 SV5
 SV12
@@ -14,24 +14,14 @@ SV8
 SV11
 SV3
 
-Kết thúc học phần,Thiết kế phần mềm,31/05/2023,8h,902,A1,6
+Kết thúc học phần,Thiết kế phần mềm,13/06/2023,8h,902,A1,7
 SV8
 SV6
 SV9
 SV11
 SV3
 SV12
-
-Đánh giá thường xuyên,Lập trình Java,29/05/2023,12h30,805,A1,9
-SV1
 SV2
-SV3
-SV4
-SV6
-SV7
-SV9
-SV10
-SV12
 
 Đánh giá năng lực,Tiếng Anh,28/05/2023,7h30,603,A7,9
 SV6
@@ -43,4 +33,28 @@ SV11
 SV12
 SV5
 SV3
+
+Đánh giá thường xuyên,Tiếng Anh,20/07/2023,7h30,603,A7,4
+SV13
+SV10
+SV11
+SV12
+
+Kết thúc học phần,Lập trình Java,13/06/2023,12h30,803,A1,8
+SV8
+SV9
+SV10
+SV11
+SV12
+SV2
+SV3
+SV13
+
+Kết thúc học phần,Thực tập chuyên ngành,05/06/2023,13h,703,A1,6
+SV6
+SV7
+SV8
+SV9
+SV10
+SV11
 

@@ -5,18 +5,11 @@
 package Model;
 
 
-import Utils.MessageDialog;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.List;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import Model.SinhVien;
 
@@ -79,8 +72,8 @@ public class SinhVienDAO {
     }
      public SinhVien getSVbyMaSV(String MaSV,List<SinhVien> list){
                 SinhVien sv = new SinhVien(MaSV);
-//		if (!list.contains(sv))
-//			return null;
+		if (!list.contains(sv))
+			return null;
 		sv = list.get(list.indexOf(sv));
 		return sv;
      }

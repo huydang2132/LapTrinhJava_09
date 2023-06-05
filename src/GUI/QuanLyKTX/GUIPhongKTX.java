@@ -14,6 +14,8 @@ import javax.swing.table.DefaultTableModel;
 import Model.PhongKTX;
 import Model.SinhVienKTX;
 import Service.PhongKTXService;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -51,6 +53,12 @@ public class GUIPhongKTX extends javax.swing.JFrame {
         jLabel6.setText("Số sinh viên hiện tại: " + phongKTX.getSoSVHienTai());
         jLabel5.setText("Số sinh viên tối đa: " + phongKTX.getSoSVToiDa());
         jLabel7.setText("Tình trạng: " + phongKTX.getTinhTrang());
+        
+        try {
+            PhongKTXService.updateFile(phongKTX);
+        } catch (IOException ex) {
+            Logger.getLogger(GUIPhongKTX.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     // hàm xử lý nhấn nút button xóa sinh viên
