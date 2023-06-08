@@ -21,15 +21,19 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    static String nameAdmin;
+
     public Home(String name) {
         initComponents();
         setLocationRelativeTo(null);
-        txtNameAdmin.setText("Xin chào, " + name);
+        this.nameAdmin = name;
+        txtNameAdmin.setText("Xin chào, " + nameAdmin);
     }
-    
+
     public Home() {
         initComponents();
         setLocationRelativeTo(null);
+        txtNameAdmin.setText("Xin chào, " + nameAdmin);
     }
 
     /**
@@ -58,6 +62,7 @@ public class Home extends javax.swing.JFrame {
         btnSinhVien.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnSinhVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-users-50.png"))); // NOI18N
         btnSinhVien.setText("SINH VIÊN");
+        btnSinhVien.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSinhVien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSinhVienActionPerformed(evt);
@@ -67,6 +72,7 @@ public class Home extends javax.swing.JFrame {
         btnLichThi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnLichThi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-schedule-50.png"))); // NOI18N
         btnLichThi.setText("LỊCH THI");
+        btnLichThi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLichThi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLichThiActionPerformed(evt);
@@ -76,6 +82,7 @@ public class Home extends javax.swing.JFrame {
         btnKTX.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnKTX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-bunk-bed-50.png"))); // NOI18N
         btnKTX.setText("KÝ TÚC XÁ");
+        btnKTX.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnKTX.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKTXActionPerformed(evt);
@@ -85,6 +92,7 @@ public class Home extends javax.swing.JFrame {
         btnRenLuyen.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnRenLuyen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Danh_gia.png"))); // NOI18N
         btnRenLuyen.setText("ĐÁNH GIÁ RÈN LUYỆN");
+        btnRenLuyen.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRenLuyen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRenLuyenActionPerformed(evt);
@@ -94,6 +102,7 @@ public class Home extends javax.swing.JFrame {
         btnThongKe.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-statistic-50.png"))); // NOI18N
         btnThongKe.setText("THỐNG KÊ");
+        btnThongKe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnThongKe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThongKeActionPerformed(evt);
@@ -108,6 +117,7 @@ public class Home extends javax.swing.JFrame {
         btnDangXuat.setForeground(new java.awt.Color(255, 255, 255));
         btnDangXuat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/icons8-exit-30.png"))); // NOI18N
         btnDangXuat.setText("Đăng xuất");
+        btnDangXuat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDangXuat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDangXuatActionPerformed(evt);
@@ -190,8 +200,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRenLuyenActionPerformed
 
     private void btnThongKeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongKeActionPerformed
-       new ThongKe().setVisible(true);
-       this.dispose();
+        new ThongKe().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnThongKeActionPerformed
 
     private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed

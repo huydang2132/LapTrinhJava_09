@@ -99,6 +99,9 @@
           <Image iconType="3" name="/Img/icons8-users-50.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="SINH VI&#xca;N"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSinhVienActionPerformed"/>
@@ -113,6 +116,9 @@
           <Image iconType="3" name="/Img/icons8-schedule-50.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="L&#x1eca;CH THI"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLichThiActionPerformed"/>
@@ -127,6 +133,9 @@
           <Image iconType="3" name="/Img/icons8-bunk-bed-50.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="K&#xdd; T&#xda;C X&#xc1;"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKTXActionPerformed"/>
@@ -141,6 +150,9 @@
           <Image iconType="3" name="/Img/Danh_gia.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#x110;&#xc1;NH GI&#xc1; R&#xc8;N LUY&#x1ec6;N"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRenLuyenActionPerformed"/>
@@ -155,6 +167,9 @@
           <Image iconType="3" name="/Img/icons8-statistic-50.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="TH&#x1ed0;NG K&#xca;"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnThongKeActionPerformed"/>
@@ -183,6 +198,9 @@
           <Image iconType="3" name="/Img/icons8-exit-30.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng xu&#x1ea5;t"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Hand Cursor"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDangXuatActionPerformed"/>

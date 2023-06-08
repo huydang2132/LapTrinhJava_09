@@ -1,6 +1,5 @@
-SV1, Nguyễn Văn A,125,Xuất sắc
-SV4, Nguyễn Văn D,85,Tốt
-SV5, Nguyễn Thị E,42,Yếu
+SV4, Nguyễn Văn D,104,Xuất sắc
+SV5, Nguyễn Thị E,0,null
 SV6, Nguyễn Văn F,0,null
 SV7, Nguyễn Thị G,0,null
 SV8, Nguyễn Văn H,0,null
@@ -10,3 +9,5 @@ SV11, Nguyễn Văn L,0,null
 SV12, Nguyễn Thị M,0,null
 SV2, Nguyễn Văn B,0,null
 SV3, Nguyễn Thị C,0,null
+SV13,Phạm Văn Nhất,0,null
+SV114,a2,0,null
